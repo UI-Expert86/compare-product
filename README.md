@@ -20,12 +20,11 @@
 ## Folder Structure
 /src
 /components
-- Products.jsx --> Main UI and comparison logic
-/data
+- Products.jsx --> Main UI and comparison logic/data
 - Data.js --> Product data (static)
-App.css --> Styling
-main.jsx --> React entry point
-App.jsx --> Renders Products component
+- App.css --> Styling
+- main.jsx --> React entry point
+- App.jsx --> Renders Products component
 
 ## Comparison Logic Explanation
 - The find() method is used to check whether product already exists in the compare list or not.
@@ -34,3 +33,5 @@ App.jsx --> Renders Products component
 
 # How to Run Locally
 1. Clone the repository:
+2. Run Command npm install
+3. Run Command npm run dev
