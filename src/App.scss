@@ -1,0 +1,182 @@
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+@media (min-width: 576px) {
+ max-width: 540px;  
+}
+
+@media (min-width: 768px) {
+max-width: 720px; 
+}
+
+@media (min-width: 992px) {
+ max-width: 960px; 
+}
+
+@media (min-width: 1280px) {
+    max-width: 1240px; 
+}
+}
+
+
+.product--wrapper{
+  padding: 30px 0;
+  width: 100%;
+  .product--main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  .product--card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  display: flex;
+  column-gap: 10px;
+  padding: 15px;
+
+  .image--wrap{
+    width: 198px;
+    height: 258px;
+    @media (max-width:767px){
+      width:140px;
+       height: 185px;
+    }
+    img{
+      border-radius: 10px 10px 0px 0px;
+      width: 100%;
+    }
+  }
+  .brand--details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+      @media (max-width:767px){
+     justify-content: flex-start;
+    row-gap: 3px;
+  }
+    .product--name{
+     font-weight: 500;
+    }
+      .brand--name{
+       font-size: 0.9rem;
+       b{
+        font-weight: 500;
+       }
+    }
+    ul{
+      font-size: 0.75rem;
+      list-style: none;
+    }
+
+.compare-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #007bff;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.75rem;
+   @media (max-width:767px){
+    border: none;
+    font-weight: 500;
+   }
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #007bff;
+    border-radius: 3px;
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="checkbox"]:checked + .checkbox::after {
+    content: "";
+    width: 4px;  
+    height: 7px;  
+    border: solid #007bff;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+    position: absolute;
+  }
+}
+
+
+  }
+  }
+}
+}
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  thead {
+    background-color: #555;
+    color: white;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: rgb(237, 237, 237);
+  }
+  tbody tr:nth-child(even) {
+    background-color: #cfcfcf;
+  }
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+
+
+  @media (max-width: 768px) {
+    table {
+      display: block;
+      overflow-x: auto; 
+      white-space: nowrap;
+    }
+    th, td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  th{
+    button{
+      border: none;
+    font-size: 0.75rem;
+    background: #ff3535;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+  }
+  .serach--input{
+    width: 100%;
+    border-radius: 60px;
+    border: solid 1px #e1e1e1;
+    height: 40px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3), 0 0 10px rgba(33, 150, 243, 0.2) inset;
+    &:focus{
+      outline: 0;
+    }
+  }
