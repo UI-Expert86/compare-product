@@ -42,7 +42,6 @@ max-width: 720px;
 
   .image--wrap{
     width: 198px;
-    height: 258px;
     @media (max-width:767px){
       width:140px;
        height: 185px;
@@ -50,12 +49,14 @@ max-width: 720px;
     img{
       border-radius: 10px 10px 0px 0px;
       width: 100%;
+      @media (min-width:767px){
+        height: 220px;
+      }
     }
   }
   .brand--details{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     row-gap: 10px;
       @media (max-width:767px){
      justify-content: flex-start;
