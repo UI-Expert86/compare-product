@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import mobileData from "../data/Data";
 
 const Products = () => {
   const [compareList, setCompareList] = useState([]);
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
+  const compareSectionRef = useRef(null); 
+
   const handleCompareChange = (item) => {
     const isSelected = compareList.find((product) => product.id === item.id);
 
@@ -25,23 +27,36 @@ const Products = () => {
   const isChecked = (id) => {
     return compareList.some((product) => product.id === id);
   };
- const getData = (e)=>{
-  setSearch(e.target.value)
- }
-  const filterData = mobileData.filter((curProduct)=>{
-    return curProduct.name.toLowerCase().includes(search.toLowerCase()) || curProduct.brand.toLowerCase().includes(search.toLowerCase())
-   })
+
+  const getData = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const filterData = mobileData.filter((curProduct) => {
+    return (
+      curProduct.name.toLowerCase().includes(search.toLowerCase()) ||
+      curProduct.brand.toLowerCase().includes(search.toLowerCase())
+    );
+  });
+
+
+  useEffect(() => {
+    if (compareList.length >= 2 && compareSectionRef.current) {
+      compareSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [compareList]);
+
   return (
     <>
       <section className='product--wrapper'>
         <div className='container'>
           <input
-          className='serach--input'
-          placeholder='Type mobile name or brand to search...'
-          onChange={getData}
+            className='serach--input'
+            placeholder='Type mobile name or brand to search...'
+            onChange={getData}
           />
           <div className='product--main'>
-            {filterData.map((item, id) => (
+            {filterData.map((item) => (
               <div key={item.id} className='product--card'>
                 <div className='image--wrap'>
                   <img src={item.url} alt={item.name} />
@@ -73,7 +88,7 @@ const Products = () => {
         </div>
       </section>
 
-      <section>
+      <section ref={compareSectionRef}>
         <div className='container'>
           <div className='selected--product'>
             {compareList.length >= 2 && (
@@ -137,4 +152,3 @@ const Products = () => {
 };
 
 export default Products;
-
